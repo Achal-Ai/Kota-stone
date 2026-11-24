@@ -18,14 +18,14 @@ export function InquiryCtaSection() {
     >
       <div className="absolute inset-0 -z-10">
         <img
-          src="/images/hero/cta-plate.svg"
+          src="/images/gallery/quarry-blocks.jpg"
           alt=""
           aria-hidden
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-center filter brightness-[0.85] contrast-[1.1]"
         />
-        <div className="absolute inset-0 bg-obsidian/78" />
+        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/95 via-obsidian/85 to-obsidian/75" />
       </div>
 
       <div className="container-page section-y">

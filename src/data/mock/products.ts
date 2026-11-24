@@ -150,7 +150,35 @@ const build = (input: ProductInput): Product => {
   }
 }
 
-const img = (slug: string) => `/images/products/${slug}.svg`
+const realImageMap: Record<string, string> = {
+  'kota-blue': '/images/gallery/kota-flooring.jpg',
+  'kota-green': '/images/gallery/kota-flooring.jpg',
+  'honey-yellow': '/images/gallery/kota-flooring.jpg',
+  'charcoal-grey': '/images/gallery/cobble-driveway.jpg',
+  'makrana-white': '/images/gallery/marble-living.jpg',
+  'morwad-white': '/images/gallery/marble-staircase.jpg',
+  'dungri': '/images/gallery/marble-living.jpg',
+  'albeta': '/images/gallery/marble-staircase.jpg',
+  'rajnagar-white': '/images/gallery/marble-living.jpg',
+  'katni-beige': '/images/gallery/villa-patio.jpg',
+  'rajasthan-black': '/images/gallery/black-granite-kitchen.jpg',
+  'south-black': '/images/gallery/granite-slabs.jpg',
+  'lakha-red': '/images/gallery/granite-slabs.jpg',
+  'jhansi-red': '/images/gallery/granite-slabs.jpg',
+  'chima-pink': '/images/gallery/granite-slabs.jpg',
+  'kota-parking-tiles': '/images/gallery/cobble-driveway.jpg',
+  'red-mandana': '/images/gallery/mandana-courtyard.jpg',
+  'black-basalt': '/images/gallery/cobble-driveway.jpg',
+  'chequered-grooved-stones': '/images/gallery/cobble-driveway.jpg',
+  'cobbles': '/images/gallery/cobble-driveway.jpg',
+  'dholpur-pink': '/images/gallery/sandstone-facade.jpg',
+  'dholpur-beige': '/images/gallery/sandstone-facade.jpg',
+  'jodhpur-pink': '/images/gallery/sandstone-pillars.jpg',
+  'teakwood-sandstone': '/images/gallery/sandstone-facade.jpg',
+  'rock-face-strips': '/images/gallery/rockface-cladding.jpg',
+}
+
+const img = (slug: string) => realImageMap[slug] ?? `/images/products/${slug}.svg`
 
 /* --------------------------------------------------------------------------
    1 · KOTA STONE — 5 shades

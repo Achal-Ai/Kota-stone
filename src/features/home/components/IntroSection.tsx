@@ -61,8 +61,8 @@ export function IntroSection() {
           <Reveal>
             <div className="relative">
               <ImageFrame
-                src="/images/applications/marble-interior.svg"
-                alt="Polished natural stone flooring in a light-filled interior (illustrative)"
+                src="/images/gallery/villa-patio.jpg"
+                alt="Polished natural stone flooring in a light-filled luxury villa interior"
                 ratio="aspect-[4/5]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 illustrative

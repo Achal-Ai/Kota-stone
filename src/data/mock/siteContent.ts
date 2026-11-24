@@ -173,7 +173,7 @@ export const applicationTabs: ApplicationTab[] = [
       hi: 'लिविंग रूम, लॉबी, विद्यालय, अस्पताल व कार्यालय हेतु कोटा व भारतीय मार्बल — एकसमान शेड, कैलिब्रेटेड मोटाई और यातायात अनुरूप फ़िनिश।',
     },
     categories: ['kota-stone', 'indian-marble'],
-    image: '/images/applications/flooring.svg',
+    image: '/images/gallery/kota-flooring.jpg',
   },
   {
     id: 'app-outdoor',
@@ -184,7 +184,7 @@ export const applicationTabs: ApplicationTab[] = [
       hi: 'ड्राइववे, पोडियम, रैम्प व लैंडस्केपिंग हेतु 25–75 मिमी की कोटा पार्किंग टाइल्स, ब्लैक बेसाल्ट, रेड मंदाना, चेकर्ड स्टोन व कॉबल्स — जहाँ पकड़ ज़रूरी, वहाँ एंटी-स्किड फ़िनिश।',
     },
     categories: ['parking-outdoor'],
-    image: '/images/applications/parking.svg',
+    image: '/images/gallery/mandana-courtyard.jpg',
   },
   {
     id: 'app-elevation',
@@ -195,7 +195,7 @@ export const applicationTabs: ApplicationTab[] = [
       hi: 'बाहरी ऊँचाई, बाउंड्री वॉल, स्तंभ, रिसॉर्ट व हेरिटेज फ़साड हेतु धौलपुर, जोधपुर पिंक, टीकवुड, रेनबो सैंडस्टोन व रॉक-फ़ेस स्ट्रिप्स।',
     },
     categories: ['sandstone-cladding'],
-    image: '/images/applications/elevation.svg',
+    image: '/images/gallery/sandstone-facade.jpg',
   },
   {
     id: 'app-staircase',
@@ -206,7 +206,7 @@ export const applicationTabs: ApplicationTab[] = [
       hi: 'ग्रेनाइट व मार्बल स्टेप, राइज़र, काउंटरटॉप व सिल — हमारी ही लाइनों में सटीक कट, चैम्फर व बुल-नोज़, लेने योग्य अवस्था में डिलीवर।',
     },
     categories: ['granite', 'indian-marble'],
-    image: '/images/applications/staircase.svg',
+    image: '/images/gallery/marble-staircase.jpg',
   },
 ]
 

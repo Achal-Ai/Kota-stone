@@ -31,8 +31,8 @@ export function ProcessSection() {
 
           <Reveal className="mt-10 hidden lg:block">
             <ImageFrame
-              src="/images/processing/cutting.svg"
-              alt="Stone cutting on the processing line (illustrative)"
+              src="/images/gallery/stone-cutting-craft.jpg"
+              alt="Artisan precision stone cutting and calibration on the factory processing line"
               ratio="aspect-[4/5]"
               sizes="(max-width: 1024px) 100vw, 40vw"
               illustrative

@@ -25,7 +25,7 @@ export const CONTACT: ContactConfig = {
   companyName: 'Pushp Narayan Stone Supplier',
   legalNote:
     'Complete Natural Stone, Marble & Flooring Solutions — Wholesale & Retail Inquiries Welcome',
-  email: 'info@pushpnarayanstone.com',
+  email: 'pushpnarayan@gmail.com',
   phoneDisplay: null,
   whatsappNumber: null,
   whatsappDisplay: null,

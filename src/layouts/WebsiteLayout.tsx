@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Navbar } from '@/components/common/Navbar'
 import { Footer } from '@/components/common/Footer'
+import { FloatingChat } from '@/features/chat/FloatingChat'
 
 /**
  * Public website shell: fixed navbar, main content, global footer.
@@ -17,6 +18,7 @@ export function WebsiteLayout() {
         <Outlet />
       </main>
       <Footer />
+      <FloatingChat />
     </div>
   )
 }

@@ -112,11 +112,17 @@
     border-radius: 1px;
   }
 
-  .link-underline:focus {
-    outline: none;
+  /* Prevent mouse/pointer clicks from creating focus halos */
+  :focus:not(:focus-visible) {
+    outline: none !important;
+  }
+
+  .link-underline:focus,
+  .link-underline:active {
+    outline: none !important;
   }
   .link-underline:focus-visible {
-    outline: 1px dashed var(--color-champagne);
+    outline: 1px solid var(--color-champagne);
     outline-offset: 4px;
   }
 
