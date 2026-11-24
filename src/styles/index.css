@@ -1,0 +1,540 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   PUSHP NARAYAN STONE — DESIGN SYSTEM
+   Luxury natural stone brand. Warm ivory ground, obsidian ink, single bronze
+   accent. Cormorant Garamond for display, Inter for everything else.
+   ========================================================================== */
+
+@theme {
+  /* --- Palette --------------------------------------------------------- */
+  --color-obsidian: #242321;
+  --color-obsidian-800: #2f2d2a;
+  --color-obsidian-700: #3d3a36;
+  --color-ivory: #f5f0e8;
+  --color-ivory-deep: #ece5da;
+  --color-champagne: #d8c6a5;
+  --color-champagne-soft: #e7dbc4;
+  --color-taupe: #a99a88;
+  --color-taupe-deep: #8a7c6c;
+  --color-bronze: #9a6b43;
+  --color-bronze-light: #b78a5f;
+  --color-bronze-dark: #7d5535;
+
+  /* --- Typography ------------------------------------------------------ */
+  --font-display: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia,
+    serif;
+  --font-sans: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Radius & shadow (restrained by design) -------------------------- */
+  --radius-card: 2px;
+
+  --shadow-hairline: 0 1px 0 rgb(216 198 165 / 0.5);
+  --shadow-lifted: 0 18px 50px -30px rgb(36 35 33 / 0.55);
+
+  /* --- Motion ---------------------------------------------------------- */
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  :root {
+    color-scheme: light;
+    /* Fluid display scale */
+    --text-display-xs: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+    --text-display-sm: clamp(2.5rem, 1.6rem + 3.4vw, 4.25rem);
+    --text-display-lg: clamp(3rem, 1.6rem + 5.4vw, 6rem);
+  }
+
+  * {
+    border-color: var(--color-champagne);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ivory);
+    color: var(--color-obsidian);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Restrained, accessible focus */
+  :focus-visible {
+    outline: 2px solid var(--color-bronze);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  ::selection {
+    background: var(--color-champagne);
+    color: var(--color-obsidian);
+  }
+
+  /* Thin, on-brand scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ivory-deep);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-taupe);
+    border: 3px solid var(--color-ivory-deep);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-bronze);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Typography utilities
+   ========================================================================== */
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+@utility display-sm {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+@utility display-xs {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xs);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+@utility text-balance-all {
+  text-wrap: balance;
+}
+
+/* Body copy measure — keeps long paragraphs elegant */
+@utility measure {
+  max-width: 62ch;
+}
+
+@utility measure-wide {
+  max-width: 74ch;
+}
+
+/* ==========================================================================
+   Layout & motif utilities
+   ========================================================================== */
+
+@utility section-y {
+  padding-block: clamp(4.5rem, 3rem + 6vw, 8.5rem);
+}
+
+@utility section-y-tight {
+  padding-block: clamp(3.25rem, 2.4rem + 4vw, 6rem);
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90rem;
+  padding-inline: clamp(1.25rem, 0.6rem + 2.6vw, 4rem);
+}
+
+@utility container-narrow {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: clamp(1.25rem, 0.6rem + 2.6vw, 4rem);
+}
+
+/* 1px champagne hairline — the signature divider of the system */
+@utility rule {
+  border-top: 1px solid var(--color-champagne);
+}
+
+@utility rule-dark {
+  border-top: 1px solid rgb(216 198 165 / 0.22);
+}
+
+/* Numbered index used across sections: 01 — */
+@utility index-num {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--color-bronze);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Vertical rotated caption pinned to image edges */
+@utility vertical-caption {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Motion — subtle, single direction, never decorative noise
+   ========================================================================== */
+
+@utility fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--ease-luxe),
+    transform 0.8s var(--ease-luxe);
+}
+
+@utility fade-up-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes luxe-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes luxe-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes luxe-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes luxe-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Component layer — shared, reusable building blocks
+   ========================================================================== */
+
+@layer components {
+  /* --- Buttons --------------------------------------------------------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 1rem 1.9rem;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background-color 0.4s var(--ease-luxe),
+      color 0.4s var(--ease-luxe),
+      border-color 0.4s var(--ease-luxe),
+      transform 0.4s var(--ease-luxe);
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-solid {
+    background: var(--color-bronze);
+    color: var(--color-ivory);
+    border-color: var(--color-bronze);
+  }
+  .btn-solid:hover {
+    background: var(--color-bronze-dark);
+    border-color: var(--color-bronze-dark);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-obsidian);
+    border-color: color-mix(in srgb, var(--color-obsidian) 35%, transparent);
+  }
+  .btn-outline:hover {
+    background: var(--color-obsidian);
+    border-color: var(--color-obsidian);
+    color: var(--color-ivory);
+  }
+
+  .btn-light {
+    background: transparent;
+    color: var(--color-ivory);
+    border-color: rgb(245 240 232 / 0.4);
+  }
+  .btn-light:hover {
+    background: var(--color-ivory);
+    border-color: var(--color-ivory);
+    color: var(--color-obsidian);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-obsidian);
+    border-color: transparent;
+    padding-inline: 0;
+  }
+  .btn-ghost:hover {
+    color: var(--color-bronze);
+  }
+
+  .btn-sm {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.6875rem;
+  }
+
+  .btn-lg {
+    padding: 1.15rem 2.4rem;
+  }
+
+  /* --- Link with animated rule ---------------------------------------- */
+  .link-underline {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-luxe);
+  }
+  .link-underline:hover::after,
+  .link-underline[data-active='true']::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* --- Section header -------------------------------------------------- */
+  .section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* --- Form fields ----------------------------------------------------- */
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .field-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-taupe-deep);
+  }
+  .field-input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-obsidian) 22%, transparent);
+    padding: 0.75rem 0.25rem;
+    font-size: 0.9375rem;
+    color: var(--color-obsidian);
+    transition: border-color 0.4s var(--ease-luxe);
+    border-radius: 0;
+  }
+  .field-input::placeholder {
+    color: color-mix(in srgb, var(--color-taupe) 85%, transparent);
+  }
+  .field-input:focus {
+    outline: none;
+    border-bottom-color: var(--color-bronze);
+  }
+  .field-input[aria-invalid='true'] {
+    border-bottom-color: #a4442f;
+  }
+  textarea.field-input {
+    resize: vertical;
+    min-height: 7rem;
+  }
+
+  /* --- Scroll reveal --------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.9s var(--ease-luxe),
+      transform 0.9s var(--ease-luxe);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* --- Skeleton loading state ------------------------------------------ */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-ivory-deep) 25%,
+      color-mix(in srgb, var(--color-ivory) 60%, var(--color-champagne)) 37%,
+      var(--color-ivory-deep) 63%
+    );
+    background-size: 400% 100%;
+    animation: luxe-shimmer 1.4s ease infinite;
+  }
+
+  @keyframes luxe-shimmer {
+    from {
+      background-position: 100% 50%;
+    }
+    to {
+      background-position: 0 50%;
+    }
+  }
+
+  /* --- Skip link ------------------------------------------------------- */
+  .skip-link {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -120%);
+    z-index: 100;
+    background: var(--color-obsidian);
+    color: var(--color-ivory);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: transform 0.3s var(--ease-luxe);
+  }
+  .skip-link:focus {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ==========================================================================
+   Utilities that need arbitrary values Tailwind can't infer
+   ========================================================================== */
+
+@utility text-display-lg {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+/* Hide scrollbar on horizontal rails without losing scrollability */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility no-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+}

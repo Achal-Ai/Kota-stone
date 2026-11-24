@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1200" width="1920" height="1200" role="img" aria-label="hero cta plate">
+  <title>hero cta plate</title>
+  <defs>
+    <radialGradient id="vig3" cx="50%" cy="45%" r="80%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.18"/>
+    </radialGradient></defs>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EFE8DC"/><stop offset="100%" stop-color="#DCD1BE"/></linearGradient><pattern id="stone" width="700" height="500" patternUnits="userSpaceOnUse"><rect width="700" height="500" fill="#7C8A8C"/><rect width="700" height="500" filter="url(#mott-dark)" opacity="0.55"/><rect width="700" height="500" filter="url(#mott-light)" opacity="0.42"/><rect width="700" height="500" filter="url(#fleck)" opacity="0.28"/><g filter="url(#warp)" opacity="0.3"><rect y="210" width="700" height="80" fill="#5F6C6E"/><rect y="340" width="700" height="45" fill="#93A0A1"/><rect y="60" width="700" height="35" fill="#93A0A1"/></g><rect width="700" height="500" filter="url(#grain)" opacity="0.16"/><rect width="700" height="500" fill="url(#vig)"/></pattern>
+    <filter id="haze" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter></defs>
+    <filter id="mott-dark" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="4" seed="2017" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.373  0 0 0 0 0.424  0 0 0 0 0.431  1.7 0 0 0 -0.55"/>
+    </filter>
+    <filter id="mott-light" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="2018" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.576  0 0 0 0 0.627  0 0 0 0 0.631  1.5 0 0 0 -0.55"/>
+    </filter>
+    <filter id="fleck" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="turbulence" baseFrequency="1.1" numOctaves="2" seed="2020" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 0.373
+                0 0 0 0 0.424
+                0 0 0 0 0.431
+                1.2 0 0 0 -0.42"/>
+    </filter>
+    <filter id="warp" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.004" numOctaves="4" seed="2026" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="60"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="2034" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.000  0 0 0 0 0.000  1.1 0 0 0 -0.55"/>
+    </filter><radialGradient id="vig" cx="50%" cy="42%" r="78%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.22"/></radialGradient><rect width="1920" height="792" fill="url(#sky)"/><rect y="792" width="1920" height="408" fill="#A99A88" opacity="0.55"/><line x1="0" y1="792" x2="1920" y2="792" stroke="#242321" stroke-opacity="0.25" stroke-width="2"/><g transform="translate(77 792) rotate(-5.4)"><rect x="0" y="-408" width="194" height="408" fill="url(#stone)"/><rect x="190" y="-408" width="4" height="408" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-408" width="194" height="408" fill="#242321" opacity="0.07"/></g><g transform="translate(336 792) rotate(-5.4)"><rect x="0" y="-564" width="240" height="564" fill="url(#stone)"/><rect x="236" y="-564" width="4" height="564" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-564" width="240" height="564" fill="#242321" opacity="0.07"/></g><g transform="translate(595 792) rotate(-4.8)"><rect x="0" y="-487" width="203" height="487" fill="url(#stone)"/><rect x="199" y="-487" width="4" height="487" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-487" width="203" height="487" fill="#242321" opacity="0.07"/></g><g transform="translate(854 792) rotate(-3.4)"><rect x="0" y="-566" width="208" height="566" fill="url(#stone)"/><rect x="204" y="-566" width="4" height="566" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-566" width="208" height="566" fill="#242321" opacity="0.07"/></g><g transform="translate(1114 792) rotate(-6.7)"><rect x="0" y="-483" width="159" height="483" fill="url(#stone)"/><rect x="155" y="-483" width="4" height="483" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-483" width="159" height="483" fill="#242321" opacity="0.07"/></g><g transform="translate(1373 792) rotate(-4.8)"><rect x="0" y="-551" width="233" height="551" fill="url(#stone)"/><rect x="229" y="-551" width="4" height="551" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-551" width="233" height="551" fill="#242321" opacity="0.07"/></g><g transform="translate(1632 792) rotate(-4.0)"><rect x="0" y="-551" width="244" height="551" fill="url(#stone)"/><rect x="240" y="-551" width="4" height="551" fill="#9A6B43" opacity="0.55"/><rect x="0" y="-551" width="244" height="551" fill="#242321" opacity="0.07"/></g><polygon points="384,0 1056,0 768,1200 96,1200" fill="#D8C6A5" opacity="0.2" filter="url(#haze)"/><rect width="1920" height="1200" fill="url(#vig3)"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="albeta — illustrative stone texture">
+  <title>albeta — illustrative stone texture</title>
+  <defs>
+    <filter id="mott-dark" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="4" seed="1053" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.863  0 0 0 0 0.843  0 0 0 0 0.804  1.7 0 0 0 -0.55"/>
+    </filter>
+    <filter id="mott-light" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="1054" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 1.000  0 0 0 0 1.000  0 0 0 0 1.000  1.5 0 0 0 -0.55"/>
+    </filter>
+    <filter id="veinwarp" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="4" seed="1060" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="90"
+        xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="cloud" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.0025" numOctaves="3" seed="1055" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.863  0 0 0 0 0.843  0 0 0 0 0.804  1.3 0 0 0 -0.55"/>
+    </filter>
+    <filter id="grain" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="1070" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.000  0 0 0 0 0.000  1.1 0 0 0 -0.55"/>
+    </filter><radialGradient id="vig" cx="50%" cy="42%" r="78%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.22"/></radialGradient></defs>
+<rect width="800" height="1000" fill="#F2EEE7"/><rect width="800" height="1000" filter="url(#mott-dark)" opacity="0.55"/><rect width="800" height="1000" filter="url(#mott-light)" opacity="0.42"/><g filter="url(#veinwarp)"><path d="M 878 705 C 1090 311 1090 311 865 1025 C 692 736 692 736 554 717 C 415 442 415 442 368 594 C 458 876 458 876 301 832" fill="none" stroke="#BAB2A5" stroke-width="4.95" stroke-opacity="0.37" stroke-linecap="round"/><path d="M 664 943 C 676 989 676 989 481 1127 C 389 1555 389 1555 384 1054 C 725 1255 725 1255 621 664 C 308 949 308 949 662 607 C 778 1010 778 1010 563 983" fill="none" stroke="#BAB2A5" stroke-width="2.45" stroke-opacity="0.19" stroke-linecap="round"/><path d="M 218 197 C 58 611 58 611 -54 437 C 65 722 65 722 -22 518 C 263 147 263 147 178 513" fill="none" stroke="#BAB2A5" stroke-width="4.44" stroke-opacity="0.29" stroke-linecap="round"/><path d="M 20 791 C 193 1079 193 1079 -264 837 C -330 835 -330 835 -213 1055 C 137 1424 137 1424 -320 1430" fill="none" stroke="#BAB2A5" stroke-width="5.43" stroke-opacity="0.48" stroke-linecap="round"/><path d="M 284 -60 C 330 -313 330 -313 246 140 C 121 356 121 356 326 369 C 543 466 543 466 294 527" fill="none" stroke="#BAB2A5" stroke-width="5.07" stroke-opacity="0.23" stroke-linecap="round"/><path d="M 225 341 C 214 -43 214 -43 226 111 C -79 542 -79 542 233 98 C 229 542 229 542 86 -228" fill="none" stroke="#BAB2A5" stroke-width="3.39" stroke-opacity="0.33" stroke-linecap="round"/><path d="M -52 476 C -350 595 -350 595 -230 370 C -350 257 -350 257 -383 339 C -48 62 -48 62 -435 -42 C -103 -283 -103 -283 -313 -286" fill="none" stroke="#BAB2A5" stroke-width="2.53" stroke-opacity="0.29" stroke-linecap="round"/><path d="M 320 553 C 497 562 497 562 552 681 C 695 591 695 591 555 399 C 314 51 314 51 833 228 C 996 227 996 227 1123 416 C 997 600 997 600 892 447" fill="none" stroke="#BAB2A5" stroke-width="2.45" stroke-opacity="0.27" stroke-linecap="round"/></g><g filter="url(#veinwarp)"><path d="M 642 466 C 454 310 454 310 794 271 C 959 291 959 291 974 -110 C 790 51 790 51 1126 -501 C 1275 -706 1275 -706 1371 -334" fill="none" stroke="#d5d0c9" stroke-width="2.84" stroke-opacity="0.18" stroke-linecap="round"/><path d="M 775 505 C 609 667 609 667 708 802 C 748 1138 748 1138 827 1197 C 768 1154 768 1154 1115 1337 C 977 1416 977 1416 1286 1618 C 1578 2009 1578 2009 1551 1473" fill="none" stroke="#d5d0c9" stroke-width="2.96" stroke-opacity="0.24" stroke-linecap="round"/><path d="M 303 -95 C 260 -432 260 -432 545 83 C 470 494 470 494 591 -149 C 905 -260 905 -260 524 -27" fill="none" stroke="#d5d0c9" stroke-width="2.60" stroke-opacity="0.25" stroke-linecap="round"/><path d="M 64 866 C -189 475 -189 475 -98 1025 C -268 1450 -268 1450 147 1182 C 41 812 41 812 145 1361 C -51 1005 -51 1005 209 1614 C 154 1579 154 1579 111 1768" fill="none" stroke="#d5d0c9" stroke-width="0.87" stroke-opacity="0.34" stroke-linecap="round"/></g><rect width="800" height="1000" filter="url(#cloud)" opacity="0.35"/><rect width="800" height="1000" filter="url(#grain)" opacity="0.16"/><rect width="800" height="1000" fill="url(#vig)"/>
+</svg>

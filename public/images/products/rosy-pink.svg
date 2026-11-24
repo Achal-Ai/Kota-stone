@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="rosy pink — illustrative stone texture">
+  <title>rosy pink — illustrative stone texture</title>
+  <defs>
+    <filter id="mott-dark" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="4" seed="1130" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.659  0 0 0 0 0.478  0 0 0 0 0.467  1.7 0 0 0 -0.55"/>
+    </filter>
+    <filter id="mott-light" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="1131" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.871  0 0 0 0 0.722  0 0 0 0 0.702  1.5 0 0 0 -0.55"/>
+    </filter>
+    <filter id="spec-a" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="turbulence" baseFrequency="0.75" numOctaves="2" seed="1131" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 0.949
+                0 0 0 0 0.937
+                0 0 0 0 0.914
+                2.1 0 0 0 -0.42"/>
+    </filter>
+    <filter id="spec-b" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="turbulence" baseFrequency="1.4" numOctaves="2" seed="1135" result="t"/>
+      <feColorMatrix in="t" type="matrix"
+        values="0 0 0 0 0.910
+                0 0 0 0 0.812
+                0 0 0 0 0.796
+                1.7 0 0 0 -0.42"/>
+    </filter>
+    <filter id="grain" x="-4%" y="-4%" width="108%" height="108%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="1147" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.000  0 0 0 0 0.000  0 0 0 0 0.000  1.1 0 0 0 -0.55"/>
+    </filter><radialGradient id="vig" cx="50%" cy="42%" r="78%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.22"/></radialGradient></defs>
+<rect width="800" height="1000" fill="#C89A96"/><rect width="800" height="1000" filter="url(#mott-dark)" opacity="0.55"/><rect width="800" height="1000" filter="url(#mott-light)" opacity="0.42"/><rect width="800" height="1000" filter="url(#spec-a)" opacity="0.8"/><rect width="800" height="1000" filter="url(#spec-b)" opacity="0.6"/><rect width="800" height="1000" filter="url(#grain)" opacity="0.16"/><rect width="800" height="1000" fill="url(#vig)"/>
+</svg>
