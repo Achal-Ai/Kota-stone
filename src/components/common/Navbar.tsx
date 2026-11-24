@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/app/providers/LanguageProvider'
-import { categories } from '@/data/mock/categories'
+import { useCategoriesStore } from '@/data/store'
 import { CONTACT } from '@/data/constants/contact'
 import { cn } from '@/utils/format'
 
@@ -103,38 +103,49 @@ export function Navbar() {
 
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
+          'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]',
           solid
-            ? 'border-b border-champagne bg-ivory/95 backdrop-blur-md'
-            : 'border-b border-transparent bg-transparent',
+            ? 'border-b border-champagne/80 bg-ivory/95 shadow-[0_4px_25px_-10px_rgba(36,35,33,0.12)] backdrop-blur-md'
+            : 'border-b border-ivory/15 bg-gradient-to-b from-obsidian/70 via-obsidian/35 to-transparent backdrop-blur-xs',
         )}
       >
-        {/* utility strip */}
+        {/* utility strip / announcement bar */}
         <div
           className={cn(
             'hidden transition-colors duration-500 lg:block',
-            solid ? 'border-b border-champagne/60' : 'border-b border-ivory/15',
+            solid
+              ? 'border-b border-champagne/70 bg-ivory-deep/90 backdrop-blur-md'
+              : 'border-b border-ivory/15 bg-obsidian/30 backdrop-blur-md',
           )}
         >
-          <div className="container-page flex h-9 items-center justify-between text-[0.625rem] tracking-[0.2em] uppercase">
-            <p className={cn(solid ? 'text-taupe-deep' : 'text-ivory/70')}>
-              {t('meta.tagline')}
-            </p>
-            <div className="flex items-center gap-5">
+          <div className="container-page flex h-10 items-center justify-between text-[0.625rem] font-medium tracking-[0.22em] uppercase">
+            <div className="flex items-center gap-2.5">
+              <span
+                aria-hidden
+                className={cn(
+                  'h-1.5 w-1.5 rotate-45 transition-colors',
+                  solid ? 'bg-bronze' : 'bg-champagne',
+                )}
+              />
+              <p className={cn('transition-colors font-medium tracking-[0.2em]', solid ? 'text-taupe-deep' : 'text-ivory/90')}>
+                {t('meta.tagline')}
+              </p>
+            </div>
+            <div className="flex items-center gap-6">
               <a
                 href={`mailto:${CONTACT.email}`}
                 className={cn(
                   'link-underline transition-colors',
-                  solid ? 'text-taupe-deep hover:text-bronze' : 'text-ivory/70 hover:text-ivory',
+                  solid ? 'text-taupe-deep hover:text-bronze' : 'text-ivory/90 hover:text-champagne',
                 )}
               >
                 {CONTACT.email}
               </a>
               <span
                 aria-hidden
-                className={cn('h-3 w-px', solid ? 'bg-champagne' : 'bg-ivory/25')}
+                className={cn('h-3 w-px transition-colors', solid ? 'bg-champagne' : 'bg-ivory/30')}
               />
-              <span className={cn(solid ? 'text-taupe-deep' : 'text-ivory/70')}>
+              <span className={cn('transition-colors', solid ? 'text-taupe-deep' : 'text-ivory/90')}>
                 {t('footer.phone')}: {t('footer.phonePending')}
               </span>
             </div>
@@ -143,21 +154,21 @@ export function Navbar() {
 
         {/* main bar */}
         <div className="container-page flex h-[4.5rem] items-center justify-between gap-6">
-          <Link to="/" aria-label={t('meta.siteName')} className="group flex items-center gap-3">
+          <Link to="/" aria-label={t('meta.siteName')} className="group flex items-center gap-3.5 focus:outline-none">
             <Mark solid={solid} />
             <span className="hidden flex-col leading-none sm:flex">
               <span
                 className={cn(
-                  'font-display text-[1.35rem] font-medium tracking-[-0.01em] transition-colors',
-                  solid ? 'text-obsidian' : 'text-ivory',
+                  'font-display text-[1.4rem] font-medium tracking-tight transition-colors',
+                  solid ? 'text-obsidian group-hover:text-bronze' : 'text-ivory group-hover:text-champagne',
                 )}
               >
                 Pushp Narayan
               </span>
               <span
                 className={cn(
-                  'mt-1 text-[0.5625rem] font-medium tracking-[0.34em] uppercase transition-colors',
-                  solid ? 'text-taupe-deep' : 'text-ivory/70',
+                  'mt-1 text-[0.5625rem] font-semibold tracking-[0.34em] uppercase transition-colors',
+                  solid ? 'text-taupe-deep' : 'text-champagne/85',
                 )}
               >
                 Stone Supplier
@@ -166,7 +177,7 @@ export function Navbar() {
           </Link>
 
           {/* desktop nav */}
-          <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+          <nav aria-label="Primary" className="hidden items-center gap-7 xl:gap-8 lg:flex">
             {links.map((link) =>
               link.key === 'nav.products' ? (
                 <div
@@ -180,13 +191,13 @@ export function Navbar() {
                     onClick={() => setMegaOpen(false)}
                     className={({ isActive }) =>
                       cn(
-                        'link-underline flex items-center gap-1.5 py-2 text-[0.75rem] font-medium tracking-[0.16em] uppercase transition-colors',
+                        'link-underline flex items-center gap-1.5 py-2 text-[0.75rem] font-medium tracking-[0.18em] uppercase transition-colors',
                         solid
                           ? isActive
-                            ? 'text-bronze'
+                            ? 'text-bronze font-semibold'
                             : 'text-obsidian hover:text-bronze'
                           : isActive
-                            ? 'text-champagne'
+                            ? 'text-champagne font-semibold'
                             : 'text-ivory/85 hover:text-ivory',
                       )
                     }
@@ -210,13 +221,13 @@ export function Navbar() {
                   to={link.href}
                   className={({ isActive }) =>
                     cn(
-                      'link-underline py-2 text-[0.75rem] font-medium tracking-[0.16em] uppercase transition-colors',
+                      'link-underline py-2 text-[0.75rem] font-medium tracking-[0.18em] uppercase transition-colors',
                       solid
                         ? isActive
-                          ? 'text-bronze'
+                          ? 'text-bronze font-semibold'
                           : 'text-obsidian hover:text-bronze'
                         : isActive
-                          ? 'text-champagne'
+                          ? 'text-champagne font-semibold'
                           : 'text-ivory/85 hover:text-ivory',
                     )
                   }
@@ -228,7 +239,7 @@ export function Navbar() {
           </nav>
 
           {/* right cluster */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3.5">
             <LanguageSwitcher
               locale={locale}
               onChange={setLocale}
@@ -238,14 +249,18 @@ export function Navbar() {
             <Link
               to="/contact#inquiry"
               className={cn(
-                'hidden items-center gap-2 border px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.14em] uppercase transition-all duration-400 xl:inline-flex',
+                'group hidden items-center gap-2 border px-5 py-2.5 text-[0.6875rem] font-semibold tracking-[0.16em] uppercase transition-all duration-300 xl:inline-flex',
                 solid
-                  ? 'border-obsidian bg-obsidian text-ivory hover:bg-bronze hover:border-bronze'
-                  : 'border-ivory/45 text-ivory hover:bg-ivory hover:text-obsidian',
+                  ? 'border-obsidian bg-obsidian text-ivory hover:bg-bronze hover:border-bronze shadow-xs hover:-translate-y-0.5'
+                  : 'border-champagne/50 bg-champagne/15 backdrop-blur-sm text-champagne-soft hover:bg-bronze hover:border-bronze hover:text-ivory shadow-xs hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(216,198,165,0.25)]',
               )}
             >
               {t('nav.inquiryCta')}
-              <ArrowUpRight aria-hidden size={14} />
+              <ArrowUpRight
+                aria-hidden
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </Link>
 
             <button
@@ -255,10 +270,10 @@ export function Navbar() {
               aria-controls="mobile-drawer"
               aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
               className={cn(
-                'inline-flex h-11 w-11 items-center justify-center border transition-colors lg:hidden',
+                'inline-flex h-11 w-11 items-center justify-center border transition-all duration-300 lg:hidden',
                 solid
-                  ? 'border-champagne text-obsidian'
-                  : 'border-ivory/35 text-ivory',
+                  ? 'border-champagne bg-ivory text-obsidian hover:border-bronze hover:text-bronze'
+                  : 'border-champagne/35 bg-obsidian/40 backdrop-blur-xs text-ivory hover:border-champagne hover:text-champagne',
               )}
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -285,12 +300,23 @@ function Mark({ solid }: { solid: boolean }) {
     <span
       aria-hidden
       className={cn(
-        'grid h-11 w-11 shrink-0 place-items-center border transition-colors duration-500',
-        solid ? 'border-bronze bg-bronze text-ivory' : 'border-ivory/50 text-ivory',
+        'relative grid h-11 w-11 shrink-0 place-items-center border p-[3px] transition-all duration-500',
+        solid
+          ? 'border-bronze bg-bronze/10 text-bronze'
+          : 'border-champagne/40 bg-obsidian/40 text-ivory backdrop-blur-xs group-hover:border-champagne',
       )}
     >
-      <span className="font-display text-[1.05rem] leading-none font-semibold tracking-tight">
-        PN
+      <span
+        className={cn(
+          'grid h-full w-full place-items-center border transition-colors duration-500',
+          solid
+            ? 'border-bronze/30 bg-bronze text-ivory'
+            : 'border-champagne/25 bg-transparent text-ivory group-hover:border-champagne/50',
+        )}
+      >
+        <span className="font-display text-[1.1rem] leading-none font-semibold tracking-tight">
+          PN
+        </span>
       </span>
     </span>
   )
@@ -302,6 +328,7 @@ function Mark({ solid }: { solid: boolean }) {
 
 function MegaMenu({ solid }: { solid: boolean }) {
   const { t, tx } = useLanguage()
+  const { categories } = useCategoriesStore()
 
   return (
     <div
@@ -384,8 +411,10 @@ function LanguageSwitcher({
       role="group"
       aria-label={t('common.language')}
       className={cn(
-        'flex items-center border transition-colors duration-500',
-        solid ? 'border-champagne' : 'border-ivory/35',
+        'flex items-center border p-0.5 transition-colors duration-500',
+        solid
+          ? 'border-champagne bg-ivory-deep/60'
+          : 'border-champagne/35 bg-obsidian/30 backdrop-blur-xs',
       )}
     >
       {(['en', 'hi'] as const).map((code) => (
@@ -395,12 +424,12 @@ function LanguageSwitcher({
           onClick={() => onChange(code)}
           aria-pressed={locale === code}
           className={cn(
-            'px-3 py-2 text-[0.625rem] font-semibold tracking-[0.16em] uppercase transition-colors',
+            'px-2.5 py-1 text-[0.625rem] font-semibold tracking-[0.16em] uppercase transition-all duration-300',
             locale === code
-              ? 'bg-bronze text-ivory'
+              ? 'bg-bronze text-ivory shadow-xs'
               : solid
                 ? 'text-taupe-deep hover:text-bronze'
-                : 'text-ivory/70 hover:text-ivory',
+                : 'text-ivory/80 hover:text-ivory',
           )}
         >
           {code === 'en' ? 'EN' : 'हिं'}
@@ -419,6 +448,7 @@ const MobileDrawer = forwardRef<
   { open: boolean; onClose: () => void }
 >(function MobileDrawer({ open, onClose }, ref) {
   const { t, tx, locale, setLocale } = useLanguage()
+  const { categories } = useCategoriesStore()
 
   return (
     <div

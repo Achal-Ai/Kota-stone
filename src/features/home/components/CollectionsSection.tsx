@@ -3,8 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/app/providers/LanguageProvider'
 import { ImageFrame } from '@/components/common/ImageFrame'
 import { Reveal, SectionHeader } from '@/components/ui'
-import { categories } from '@/data/mock/categories'
-import { productsByCategory } from '@/data/mock/products'
+import { useCategoriesStore, useProductsStore } from '@/data/store'
 import { cn } from '@/utils/format'
 
 /**
@@ -14,6 +13,8 @@ import { cn } from '@/utils/format'
  */
 export function CollectionsSection() {
   const { t, tx } = useLanguage()
+  const { categories } = useCategoriesStore()
+  const { products } = useProductsStore()
 
   return (
     <section
@@ -43,7 +44,7 @@ export function CollectionsSection() {
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category, index) => {
-            const count = productsByCategory(category.slug).length
+            const count = products.filter((p) => p.categorySlug === category.slug).length
             const isFeature = index === 0
 
             return (

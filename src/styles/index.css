@@ -112,6 +112,14 @@
     border-radius: 1px;
   }
 
+  .link-underline:focus {
+    outline: none;
+  }
+  .link-underline:focus-visible {
+    outline: 1px dashed var(--color-champagne);
+    outline-offset: 4px;
+  }
+
   ::selection {
     background: var(--color-champagne);
     color: var(--color-obsidian);

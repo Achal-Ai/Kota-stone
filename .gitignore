@@ -50,6 +50,9 @@ env/
 Thumbs.db
 ehthumbs.db
 
+# Documentation
+PROJECT_ARCHITECTURE.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

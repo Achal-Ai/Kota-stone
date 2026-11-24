@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/app/providers/LanguageProvider'
 import { ProductCard } from '@/components/common/ProductCard'
 import { Button, Reveal, SectionHeader } from '@/components/ui'
-import { featuredProducts } from '@/data/mock/products'
+import { useProductsStore } from '@/data/store'
 
 /**
  * Featured products — a horizontal rail with custom arrow controls
@@ -12,6 +12,8 @@ import { featuredProducts } from '@/data/mock/products'
  */
 export function FeaturedSection() {
   const { t } = useLanguage()
+  const { products } = useProductsStore()
+  const featuredProducts = products.filter((p) => p.featured)
   const railRef = useRef<HTMLDivElement>(null)
 
   const scrollBy = (direction: 1 | -1) => {
